@@ -1,0 +1,21 @@
+footer {
+    width: 100%;
+    background-color: #54575c;
+    text-align: center;
+    color: #c3c3c5;
+    font-size: 14px;
+    padding: 12px 0;
+    line-height: 1.4;
+    article {
+        @include flexLayout(row, center, center);
+        gap: 20px;
+    }
+    a {
+        color: #c3c3c5;
+        @include flexLayout(row, center, center);
+        gap: 5px;
+        > img {
+            height: 18px;
+        }
+    }
+}
