@@ -15,6 +15,10 @@
                     text-transform: uppercase;
                     opacity: 0;
                     animation: fadeInUp 1.2s forwards;
+                    @include mediaQuery(mobile) {
+                        font-size: 7.4rem;
+                        text-align: center;
+                    }
                 }
                 p {
                     color: #888;
@@ -23,6 +27,12 @@
                     margin-top: 20px;
                     opacity: 0;
                     animation: fadeInUp 1.2s 0.4s forwards;
+                    @include mediaQuery(mobile) {
+                        width: 100%;
+                        text-align: center;
+                        font-size: 2.6rem;
+                        margin-top: 2rem;
+                    }
                 }
             }
             background: radial-gradient(circle at 70% 30%, rgba(0, 212, 255, 0.08) 0%, transparent 50%);
@@ -30,9 +40,23 @@
         .career {
             > article {
                 @include gridLayout(3, 50px, 10px);
+                position: relative;
+                @media all and (max-width: 1000px) {
+                    @include gridLayout(2, 50px, 10px);
+                }
+                @include mediaQuery(mobile) {
+                    @include gridLayout(1, 3rem, 0);
+                }
                 dl {
                     @include flexLayout(row, flex-start, stretch);
                     gap: 20px;
+                    @media all and (max-width: 1321px) {
+                        @include flexLayout(column, flex-start, flex-start);
+                        gap: 10px;
+                    }
+                    @include mediaQuery(mobile) {
+                        gap: 1rem;
+                    }
                     dt {
                         font-size: 16px;
                         font-weight: 500;
@@ -40,10 +64,20 @@
                         color: #00d4ff;
                         padding-left: 20px;
                         position: relative;
+                        @media all and (max-width: 1321px) {
+                            @include flexLayout(row, flex-start, center);
+                        }
+                        @include mediaQuery(mobile) {
+                            font-size: 2.8rem;
+                            padding-left: 2rem;
+                        }
                         i {
                             width: 100%;
                             text-align: center;
                             transform: rotate(90deg);
+                            @media all and (max-width: 1321px) {
+                                transform: none;
+                            }
                         }
                         &::before {
                             content: '';
@@ -54,24 +88,49 @@
                             position: absolute;
                             left: 0;
                             top: 0;
+                            @include mediaQuery(mobile) {
+                                width: 1rem;
+                                height: 1rem;
+                                @include positionLayout(absolute, y);
+                                left: 0;
+                            }
                         }
                     }
                     dd {
                         @include flexLayout(column, flex-start, stretch);
                         gap: 15px;
+                        @media all and (max-width: 1321px) {
+                            padding-left: 20px;
+                        }
+                        @include mediaQuery(mobile) {
+                            padding-left: 1.8rem;
+                        }
                         > p {
                             color: #23d1fa;
                             font-size: 16px;
                             font-weight: 500;
+                            @include mediaQuery(mobile) {
+                                font-size: 2.8rem
+                            }
                         }
                         ul {
                             @include flexLayout(column, flex-start, stretch);
                             gap: 10px;
+                            @include mediaQuery(mobile) {
+                                @include flexLayout(row, flex-start, stretch);
+                                row-gap: 2rem;
+                                column-gap: 2rem;
+                                flex-wrap: wrap;
+                            }
                             li {
                                 color: #f8f8fb;
                                 position: relative;
                                 padding-left: 10px;
                                 line-height: 1.2;
+                                @include mediaQuery(mobile) {
+                                    font-size: 2.4rem;
+                                    padding-left: 1rem;
+                                }
                                 &::before {
                                     content: '';
                                     width: 3px;
@@ -81,6 +140,10 @@
                                     position: absolute;
                                     left: 0;
                                     top: 5px;
+                                    @include mediaQuery(mobile) {
+                                        @include positionLayout(absolute, y);
+                                        left: 0;
+                                    }
                                 }
                                 &:nth-child(even) {
                                     color: #b3b3b3;
@@ -100,6 +163,52 @@
                         }
                     }
                 }
+                .other {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    @media all and (max-width: 1321px) {
+                        left: 20px;
+                    }
+                    @media all and (max-width: 1000px) {
+                        position: static;
+                    }
+                    > h4 {
+                        color: #23d1fa;
+                        font-size: 16px;
+                        font-weight: 500;
+                        margin-bottom: 10px;
+                        @include mediaQuery(mobile) {
+                            font-size: 2.8rem;
+                            margin-bottom: 1rem;
+                        }
+                    }
+                    > ul {
+                        @include flexLayout(column, flex-start, stretch);
+                        gap: 10px;
+                        @include mediaQuery(mobile) {
+                            gap: 2rem;
+                        }
+                        > li {
+                            font-weight: 400;
+                            @include flexLayout(row, flex-start, center);
+                            gap: 3px;
+                            span {
+                                color: #b3b3b3;
+                            }
+                            &::before {
+                                content: '';
+                                width: 3px;
+                                height: 3px;
+                                background-color: #fff;
+                            }
+                            @include mediaQuery(mobile) {
+                                font-size: 2.4rem;
+                                padding-left: 2rem;
+                            }
+                        }
+                    }
+                }
             }
         }
         .skill {
@@ -112,6 +221,10 @@
                 padding: 80px 0;
                 position: relative;
                 z-index: 2;
+                @include mediaQuery(mobile) {
+                    padding: 10rem 1.5rem;
+                    gap: 2rem;
+                }
             }
             p {
                 border: 1px solid #333;
@@ -119,6 +232,11 @@
                 border-radius: 50px;
                 padding: 12px 28px;
                 backdrop-filter: blur(15px);
+                @include mediaQuery(mobile) {
+                    font-size: 2.6rem;
+                    padding: 1.6rem 3rem;
+                    border-radius: 5rem;
+                }
                 &.on {
                     border-color: #00d4ff;
                     color: #00d4ff;
@@ -133,65 +251,128 @@
                 font-size: 220px;
                 opacity: 0.04;
                 font-weight: 700;
+                @include mediaQuery(mobile) {
+                    font-size: 30rem;
+                }
             }
         }
         .works {
             padding: 0 20px;
             margin: 100px 0;
+            @include mediaQuery(mobile) {
+                padding: 0;
+                margin: 10rem 0;
+            }
             h2 {
                 &.tit {
                     font-size: 28px;
                     color: #5d5b55;
+                    @include mediaQuery(mobile) {
+                        font-size: 3.2rem;
+                    }
                     i {
                         font-size: 34px;
+                        @include mediaQuery(mobile) {
+                            font-size: 4rem
+                        }
                     }
+
                 }
             }
-            .list {
+            .grid {
                 @include gridLayout(2, 40px, 40px);
                 margin-top: 40px;
-                > dl {
-                    @include flexLayout(column, center, center);
+                @include mediaQuery(mobile) {
+                    @include gridLayout(1, 4rem, 0);
+                    margin-top: 3rem;
+                }
+                .cell {
+                    @include flexLayout(column, flex-start, center);
                     border-radius: 20px;
                     overflow: hidden;
                     transition: all 0.5s ease;
                     border: 1px solid rgba(255, 255, 255, 0.03);
+                    background-color: #1a1a1a;
+                    @include mediaQuery(mobile) {
+                        border-radius: 2rem;
+                    }
                     &:hover {
                         border-color: rgba(0, 212, 255, 0.4);
                         transform: translateY(-15px);
                         box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
                     }
-                    dt {
+                    .thumb {
                         width: 100%;
                         height: 280px;
                         background-color: #222;
                         overflow: hidden;
-                        > img {
-                            width: 100%;
+                        position: relative;
+                        @include mediaQuery(mobile) {
+                            height: 36rem;
+                        }
+                        li {
+                            background-repeat: no-repeat;
+                            background-position: center top;
+                            background-size: cover;
+                        }
+                        img {
+                            width: 1px;
+                            height: 1px;
+                            visibility: hidden;
+                        }
+                        .swiper-pagination {
+                            .swiper-pagination-bullet {
+                                opacity: 0.6;
+                                transition: all 0.5s ease;
+                            }
+                            .swiper-pagination-bullet-active {
+                                width: 20px;
+                                border-radius: 8px;
+                                background-color: #00d4ff;
+                                opacity: 0.8;
+                            }
                         }
                     }
-                    dd {
+                    .details {
                         width: 100%;
                         background-color: #1a1a1a;
                         padding: 30px;
+                        @include mediaQuery(mobile) {
+                            padding: 3rem;
+                        }
                         ul {
                             @include flexLayout(column, flex-start, stretch);
                             gap: 15px;
+                            @include mediaQuery(mobile) {
+                                grid-area: 2rem;
+                            }
                             .prj_name {
                                 font-size: 24px;
                                 color: #fff;
                                 font-weight: 500;
                                 @include flexLayout(row, flex-start, center);
                                 gap: 10px;
+                                @include mediaQuery(mobile) {
+                                    font-size: 2.8rem;
+                                    gap: 1rem;
+                                }
                                 > span {
                                     font-size: 18px;
                                     color: #5d5b55;
+                                    @include mediaQuery(mobile) {
+                                        font-size: 2.4rem;
+                                    }
                                 }
                             }
                             .used {
-                                margin-bottom: 15px;
+                                min-height: 42px;
                                 @include flexLayout(row, flex-start, center);
+                                flex-wrap: wrap;
                                 gap: 10px;
+                                @include mediaQuery(mobile) {
+                                    min-height: auto;
+                                    gap: 1rem;
+                                }
                                 i {
                                     @include flexLayout(row, flex-start, center);
                                     color: #888;
@@ -201,6 +382,11 @@
                                     background-repeat: no-repeat;
                                     background-size: auto 16px;
                                     background-position: left center;
+                                    @include mediaQuery(mobile) {
+                                        font-size: 2.4rem;
+                                        padding-left: 2.4rem;
+                                        background-size: auto 2.4rem;
+                                    }
                                     &.text {
                                         padding-left: 0;
                                     }
@@ -253,12 +439,22 @@
                                     transition: 0.3s;
                                     @include flexLayout(row, flex-start, center);
                                     gap: 5px;
+                                    @include mediaQuery(mobile) {
+                                        padding: 1rem 1.6rem;
+                                        border-radius: 1.6rem;
+                                        font-size: 2.4rem;
+                                    }
                                     &::before {
                                         content: '';
                                         width: 16px;
                                         height: 16px;
                                         mask-size: 16px 16px;
                                         background-color: #00d4ff;
+                                        @include mediaQuery(mobile) {
+                                            width: 2.4rem;
+                                            height: 2.4rem;
+                                            mask-size: 2.4rem 2.4rem;
+                                        }
                                     }
                                     &:hover {
                                         background: #00d4ff;
@@ -288,6 +484,11 @@
                             .detail {
                                 @include flexLayout(row, flex-start, center);
                                 gap: 15px;
+                                @include mediaQuery(mobile) {
+                                    font-size: 2.4rem;
+                                    gap: 2rem;
+                                    margin-top: 2rem;
+                                }
                             }
                         }
                     }

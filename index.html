@@ -5,15 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <title>...</title>
+    <link rel="stylesheet" href="css/module/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="scripts/module/jquery-3.7.1.min.js"></script>
+    <script src="scripts/module/swiper-bundle.min.js"></script>
     <script src="scripts/front.js"></script>
 </head>
 <body>
     <div id="wrap">
         <header>
             <article>
-                <h1><a href="#"><img src="images/logo.svg">WEB PUBLISHER</a></h1>
+                <h1><a href="#"><img src="images/logo.svg"><i>WEB PUBLISHER</i></a></h1>
                 <nav>
                     <ul>
                         <li><a href="#">CAREER</a></li>
@@ -156,6 +158,15 @@
                             </ul>
                         </dd>
                     </dl>
+                    <div class="other">
+                        <h4>Other</h4>
+                        <ul>
+                            <li>웹 디자인 기능사 <span>(산업인역공단)</span></li>
+                            <li>컴퓨터 그래픽스기능사<span>(산업인역공단)</span></li>
+                            <li>ACE(Adobe Certified Expert)<span>(한국어도비시스템즈)</span></li>
+                            <li>[웹 디자인 필살기] 저서</li>
+                        </ul>
+                    </div>
                 </article>
             </section>
             <section class="skill">
@@ -179,14 +190,24 @@
             <section class="works">
                 <article>
                     <h2 class="tit"><i>W</i>orks</h2>
-                    <div class="list">
-                        <dl>
-                            <dt><img src="images/career/lookoptical.jpg"></dt>
-                            <dd>
+                    <div class="grid">
+                        <div class="cell">
+                            <div class="thumb">
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide"><img src="images/career/lookoptical.jpg"></li>
+                                    <li class="swiper-slide"><img src="images/career/lookoptical_2.jpg"></li>
+                                    <li class="swiper-slide"><img src="images/career/lookoptical_3.jpg"></li>
+                                </ul>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <div class="details">
                                 <ul>
                                     <li class="prj_name">룩옵티컬(LOOKOPTICAL)<span>구축</span></li>
                                     <li class="used">
                                         <i class="text">#카페24</i>
+                                        <i class="html">HTML</i>
+                                        <i class="css">CSS</i>
+                                        <i class="jquery">jQuery</i>
                                         <i class="responsive">반응형</i>
                                     </li>
                                     <li class="detail">
@@ -197,11 +218,17 @@
                                         <a href="https://lookoptical.kr/" class="site" target="_blank">View Site</a>
                                     </li>
                                 </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt><img src="images/career/shinsegae.jpg"></dt>
-                            <dd>
+                            </div>
+                        </div>
+                        <div class="cell">
+                            <div class="thumb">
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide"><img src="images/career/shinsegae.jpg"></li>
+                                    <li class="swiper-slide"><img src="images/career/shinsegae_2.jpg"></li>
+                                </ul>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <div class="details">
                                 <ul>
                                     <li class="prj_name">신세계INC<span>유지보수</span></li>
                                     <li class="used">
@@ -219,11 +246,16 @@
                                         <a href="https://shinsegae-inc.com/" class="site" target="_blank">View Site</a>
                                     </li>
                                 </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt><img src="images/career/kd.jpg"></dt>
-                            <dd>
+                            </div>
+                        </div>
+                        <div class="cell">
+                            <div class="thumb">
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide"><img src="images/career/kd.jpg"></li>
+                                </ul>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <div class="details">
                                 <ul>
                                     <li class="prj_name">경동물류 차량관리시스템<span>구축</span></li>
                                     <li class="used">
@@ -241,11 +273,15 @@
                                         <a href="https://github.com/argur81/KD-Exp" class="git" target="_blank">GitHub</a>
                                     </li>
                                 </ul>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt><img src="images/career/wooik.jpg"></dt>
-                            <dd>
+                            </div>
+                        </div>
+                        <div class="cell">
+                            <div class="thumb">
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide"><img src="images/career/wooik.jpg"></li>
+                                </ul>
+                            </div>
+                            <div class="details">
                                 <ul>
                                     <li class="prj_name">우익반도체 근태관리시스템<span>구축</span></li>
                                     <li class="used">
@@ -263,8 +299,8 @@
                                         <a href="https://github.com/argur81/wooik" class="git" target="_blank">GitHub</a>
                                     </li>
                                 </ul>
-                            </dd>
-                        </dl>
+                            </div>
+                        </div>
                     </div>
                 </article>
             </section>
@@ -276,6 +312,15 @@
                 <p>©2026.MyPortfolio</p>
             </article>
         </footer>
+        <aside class="bottom_nav">
+            <ul>
+                <li><a href="#">CAREER</a></li>
+                <li><a href="#">SKILLS</a></li>
+                <li><a href="#" class="up"><img src="images/logo.svg"></a></li>
+                <li><a href="#">WORK</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </aside>
     </div>
 </body>
 </html>

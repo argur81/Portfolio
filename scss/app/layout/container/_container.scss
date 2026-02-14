@@ -6,3 +6,14 @@ article {
     width: 1320px;
     margin: 0 auto;
 }
+@media all and (max-width: 1321px) {
+    article {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+@include mediaQuery(mobile) {
+    article {
+        padding: 0 1.5rem;
+    }
+}
