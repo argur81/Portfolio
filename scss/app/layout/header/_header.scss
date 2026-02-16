@@ -12,7 +12,7 @@ header{
         height: 75px;
         @include mediaQuery(mobile) {
             height: auto;
-            padding: 2.4rem 1.5rem;
+            padding: 0 1.5rem;
         }
         @include flexLayout(row, space-between, center);
         > h1 {
@@ -22,36 +22,48 @@ header{
                 font-size: 16px;
                 color: #00d4ff;
                 > img {
-                    height: 25px;
-                    @include mediaQuery(mobile) {
-                        height: 5rem;
-                    }
+                    height: 30px;
                 }
-                @include mediaQuery(mobile){
-                    i {
-                        display: none;
-                    }
-                }
+            }
+            @include mediaQuery(mobile){
+                display: none;
             }
         }
         nav {
+            @include mediaQuery(mobile) {
+                width: 100%;
+            }
             ul {
                 @include flexLayout(row, flex-start, center);
                 gap: 25px;
                 @include mediaQuery(mobile) {
-                    gap: 2rem;
+                    @include flexLayout(row, space-around, center);
+                    gap: inherit;
+                    width: 100%;
+                    padding: 1rem 0;
                 }
                 li {
                     a {
                         font-size: 16px;
                         color: #f8f8fb;
                         font-weight: 700;
-                        &:hover {
+                        &:hover,
+                        &.on {
                             color: #00d4ff;
                         }
                         @include mediaQuery(mobile) {
-                            font-size: 2.6rem;
+                            font-size: 2.4rem;
+                            padding: 2rem 0;
                             font-weight: 500;
+                            display: block;
+                        }
+                    }
+                    @include mediaQuery(mobile) {
+                        &.logo {
+                            display: block;
+                            img {
+                                height: 5rem;
+                            }
                         }
                     }
                 }

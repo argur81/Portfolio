@@ -9,13 +9,33 @@ footer {
     article {
         @include flexLayout(row, center, center);
         gap: 20px;
+        @include mediaQuery(mobile) {
+            row-gap: 1rem;
+            flex-wrap: wrap;
+            padding: 1rem 0;
+            column-gap: 2rem;
+        }
     }
     a {
         color: #c3c3c5;
         @include flexLayout(row, center, center);
         gap: 5px;
+        @include mediaQuery(mobile) {
+            font-size: 2.2rem;
+        }
         > img {
             height: 18px;
+            @include mediaQuery(mobile) {
+                height: 2.2rem;
+            }
+        }
+    }
+    @include mediaQuery(mobile){
+        padding: 1rem 0;
+        p {
+            font-size: 2.2rem;
+            width: 100%;
+            text-align: center;
         }
     }
 }
