@@ -359,6 +359,7 @@
                                 > span {
                                     font-size: 18px;
                                     color: #5d5b55;
+                                    font-weight: 700;
                                     @include mediaQuery(mobile) {
                                         font-size: 2.4rem;
                                     }
@@ -377,7 +378,7 @@
                                     @include flexLayout(row, flex-start, center);
                                     color: #888;
                                     font-size: 16px;
-                                    font-weight: 700;
+                                    font-weight: 500;
                                     padding-left: 18px;
                                     background-repeat: no-repeat;
                                     background-size: auto 16px;
@@ -427,6 +428,7 @@
                             }
                             .link {
                                 @include flexLayout(row, flex-start, center);
+                                flex-wrap: wrap;
                                 gap: 5px;
                                 > a {
                                     padding: 10px 20px;
