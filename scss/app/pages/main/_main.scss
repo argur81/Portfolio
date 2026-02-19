@@ -479,6 +479,11 @@
                                             mask-image: url(../images/career/icon/code.svg);
                                         }
                                     }
+                                    &.live {
+                                        &::before {
+                                            mask-image: url(../images/career/icon/live.svg);
+                                        }
+                                    }
                                 }
                             }
                             .detail {
